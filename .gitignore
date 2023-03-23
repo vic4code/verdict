@@ -1,0 +1,9 @@
+# tmp and cached
+**/__pycache__/
+
+# data
+**/data/202301/
+
+# checkpoints
+**/checkpoint/
+**/checkpoints/
