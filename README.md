@@ -8,6 +8,22 @@ python3 -m  pip install scikit-learn==1.0.2
 ```
 
 ## Text classfication
+### Data preprocess
+```
+python data_preprocess.py \
+--raw_data_dir "data/formal_dataset/xxx.json"
+```
+
+### Convert jsonl to data splits for training
+```
+python data_split.py \
+    --jsonl_file ./data/jsonl/data_108.jsonl \
+    --save_dir ./data/dataset \
+    --splits 0.8 0.1 0.1 \
+    --task_type "multi_label"
+```
+
+
 ### Finetune
 ```
 cd textclassfication/finetune
@@ -24,7 +40,7 @@ python train.py \
 ```
 cd textclassfication/few-shot
 python train.py \
---data_dir ./data/ \
+--data_dir ./data/dataset \
 --device "cpu" \
 --output_dir ./checkpoints/ \
 --prompt "這句話要包含的要素有" \
